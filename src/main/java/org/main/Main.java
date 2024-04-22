@@ -1,15 +1,8 @@
-package org.sorfOfTovar;
+package org.main;
 
-import org.model.Product;
 import org.util.ExelDriverReader;
-import org.util.ExelReader;
-import org.util.ExelWriter;
 import org.util.SortedProduct;
-import org.w3c.dom.ls.LSOutput;
 
-import java.sql.Array;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Properties;
 
 import java.io.*;
@@ -23,7 +16,6 @@ public class Main {
         FileInputStream fis;
         Properties property = new Properties();
 
-
         try {
             fis = new FileInputStream("src/main/resources/config.properties");
             property.load(fis);
@@ -31,12 +23,9 @@ public class Main {
             //загружается произвольный паттерн
             //String specificSelect = property.getProperty("free.pattern");
 
-
-
-            String readPath = property.getProperty("read.main.xlsx.files");
+            String readPath = property.getProperty("read.main.xlsx.files.drivers");
             ExelDriverReader reader = new ExelDriverReader();
-            reader.readFromExcel(String.format(readPath, "drivers"));
-
+            reader.readFromExcel(readPath);
 
 //            String readPath = property.getProperty("read.main.xlsx.files");
 //            ExelReader reader = new ExelReader();
@@ -81,5 +70,4 @@ public class Main {
             System.err.println("ОШИБКА: Файл свойств отсуствует!");
         }
     }
-
 }

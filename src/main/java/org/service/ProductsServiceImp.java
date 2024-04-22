@@ -29,6 +29,12 @@ public class ProductsServiceImp implements ProductsService {
         dao.createTableBillOfLading(bill);
     }
 
+    /**
+     * return product of bill
+     *
+     * @param name of bill
+     * @return list of all product from current bill
+     */
     @Override
     public List<Product> getBillsByName(String name) {
         List<Product> products = dao.getBillsByName(name);
@@ -52,52 +58,7 @@ public class ProductsServiceImp implements ProductsService {
     }
 
     @Override
-    public void createTable() {
-        dao.createTable();
-    }
-
-    @Override
-    public void deleteTable() {
-        dao.deleteTable();
-    }
-
-    @Override
-    public void create(Product dataSet) {
-        dao.createTovar(dataSet);
-    }
-
-    @Override
-    public void delete(long id) {
-        dao.deleteTovar(id);
-    }
-
-    @Override
-    public void update(Product dataSet) {
-        dao.updateTovar(dataSet);
-    }
-
-    @Override
-    public Product getById(long id) {
-        return dao.getById(id);
-    }
-
-    public Product getByName(String name) {
-        return dao.getByName(name);
-    }
-
-    @Override
-    public List<Product> getAll() {
-        return dao.getAll();
-    }
-
-    @Override
     public void close() throws Exception {
         connection.close();
     }
-
-    @Override
-    public List<Product> getSorted() {
-        return dao.getSorted();
-    }
-
 }

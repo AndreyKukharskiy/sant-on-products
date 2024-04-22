@@ -47,7 +47,6 @@ public class ExelDriverReader {
                                 !rowOriginal.getCell(1).getStringCellValue().isEmpty()
                                 && !rowOriginal.getCell(9).getStringCellValue().isEmpty()) {
                             while (itRow.hasNext()) {
-                                int dfdf = 0;
                                 if (rowOriginal.getCell(0) == null || rowOriginal.getCell(9).getStringCellValue().isEmpty()) {
                                     break;
                                 }
@@ -61,9 +60,7 @@ public class ExelDriverReader {
 
                                 Comparator<Product> comparator = Comparator.comparing(Product::getBillOflading);
                                 DriverProduct driverProduct = null;
-                                driverProduct = new DriverProduct(
-                                      position, name, article, barcode, count, notFound, order);
-                                System.out.println(driverProduct);
+                                driverProduct = new DriverProduct(position, name, article, barcode, count, notFound, order);
 
                                 rowOriginal = itRow.next();
                             }

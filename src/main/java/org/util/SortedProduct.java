@@ -10,8 +10,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class SortedProduct {
-    private List<Product> allTovar;
-    private List<Product> allTovarRemains;
     private ProductsService productsService = new ProductsServiceImp();
 
     public SortedProduct() throws SQLException {
@@ -36,18 +34,9 @@ public class SortedProduct {
         return mergedAllBills;
     }
 
-    public List<Product> getSortedData() {
-        allTovar = productsService.getAll();
-        allTovar.sort(new CompareByName());
-        allTovarRemains.sort(new CompareByName());
-        return allTovar;
-    }
-
     public List<Product> getAllSink(List<Product> products) {
-        int sOrig = products.size();
         Pattern pattern = Pattern.compile("Раковина|Рукомойник|Мебельная раковина|Умывальник|Пьедестал|Полупьедестал");
         List<Product> allSink = new ArrayList<>();
-
         for (int i = 0; i < products.size(); i++) {
             Matcher matcher = pattern.matcher(products.get(i).getName());
             while (matcher.find()) {
@@ -55,9 +44,6 @@ public class SortedProduct {
                 products.remove(i);
             }
         }
-        int s1 = products.size();
-        int s2 = allSink.size();
-
         Comparator<Product> comparator = Comparator.comparing(Product::getBillOflading);
         allSink.sort(comparator);
         return allSink;
@@ -120,22 +106,6 @@ public class SortedProduct {
         Comparator<Product> comparator = Comparator.comparing(Product::getName);
         allSmallSazedProduct.sort(comparator);
         return allSmallSazedProduct;
-    }
-
-    public List<Product> getAllTovarBySpecicicPattern(String patern) {
-        getSortedData();
-        Pattern pattern = Pattern.compile(patern);
-        List<Product> allSpecificTovar = new ArrayList<>();
-
-        for (Product t : allTovar) {
-            Matcher matcher = pattern.matcher(t.getName());
-            while (matcher.find()) {
-                allSpecificTovar.add(t);
-            }
-        }
-        //происходит сортировка товара по накладной, по позиции и по имени
-
-        return allSpecificTovar;
     }
 
     public List<Product> sort(List<Product> mergedAllBills) {

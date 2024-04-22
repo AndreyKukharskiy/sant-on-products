@@ -14,23 +14,5 @@ public interface ProductsService extends AutoCloseable {
     int addProductToBillOfLading(List<Product> products);
     void addToNamesBillsOfLading(String bill, String datatime);
     Map<String, List<String>> getAllNamesBillsOfLadingByData(String datatime);
-    void createTable();
-
-    void deleteTable();
-
-    void create(Product dataSet);
-
-    void delete(long id);
-
-    void update(Product dataSet);
-
-    Product getById(long id);
-
-    Product getByName(String name);
-
-    List<Product> getAll();
-
     void close() throws Exception;
-
-    List<Product> getSorted();
 }
