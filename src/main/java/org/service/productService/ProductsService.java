@@ -1,4 +1,4 @@
-package org.service;
+package org.service.productService;
 
 
 import org.model.Product;

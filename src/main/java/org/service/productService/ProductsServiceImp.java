@@ -1,4 +1,4 @@
-package org.service;
+package org.service.productService;
 
 import org.dao.tovarDao.ProductsDAO;
 import org.dao.tovarDao.ProductsDAOImp;
@@ -54,7 +54,7 @@ public class ProductsServiceImp implements ProductsService {
 
     @Override
     public Map<String, List<String>> getAllNamesBillsOfLadingByData(String datatime) {
-        return dao.allNamesBillsOfLadingByDatta(datatime);
+        return dao.getAllNamesBillsOfLadingByDatta(datatime);
     }
 
     @Override

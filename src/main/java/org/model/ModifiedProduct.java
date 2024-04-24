@@ -2,16 +2,16 @@ package org.model;
 
 import java.util.Comparator;
 
-public class Product implements Comparator<Product> {
-   private String name;
-   private double kolichestvo;
-   private String articul;
-   private double cena;
-   private int chislo;
-   private String dataTime;
-   private String billOflading;
+public class ModifiedProduct implements Comparator<ModifiedProduct> {
+  private String name;
+  private double kolichestvo;
+  private String articul;
+  private double cena;
+  private int chislo;
+  private String dataTime;
+  private String billOflading;
 
-    public Product(String name, String articul, double kolichestvo, double cena, int chislo, String nacladnaya, String dataTime) {
+    public ModifiedProduct(String name, String articul, double kolichestvo, double cena, int chislo, String nacladnaya, String dataTime) {
         this.name = name;
         this.kolichestvo = kolichestvo;
         this.articul = articul;
@@ -78,7 +78,7 @@ public class Product implements Comparator<Product> {
         return chislo;
     }
 
-    public Product(int chislo, String name, String articul, double kolichestvo, double cena) {
+    public ModifiedProduct(int chislo, String name, String articul, double kolichestvo, double cena) {
         this.name = name;
         this.kolichestvo = kolichestvo;
         this.articul = articul;
@@ -100,7 +100,7 @@ public class Product implements Comparator<Product> {
     }
 
     @Override
-    public int compare(Product o1, Product o2) {
+    public int compare(ModifiedProduct o1, ModifiedProduct o2) {
         return o1.getName().compareTo(o2.getName());
     }
 }

@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 public interface ProductsDAO {
-    Map<String, List<String>> allNamesBillsOfLadingByDatta(String datatime);
+    Map<String, List<String>> getAllNamesBillsOfLadingByDatta(String datatime);
     List<Product> getBillsByName(String name);
     void addToNamesBillsOfLading(String bill, String datatime);
     void dropTableBillOfLading(String bill);

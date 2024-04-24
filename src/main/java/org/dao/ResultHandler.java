@@ -1,4 +1,4 @@
-package org.dao.tovarDao;
+package org.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

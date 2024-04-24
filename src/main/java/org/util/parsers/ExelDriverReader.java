@@ -1,4 +1,4 @@
-package org.util;
+package org.util.parsers;
 
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFRow;
@@ -6,8 +6,9 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.model.DriverProduct;
 import org.model.Product;
-import org.service.ProductsService;
-import org.service.ProductsServiceImp;
+import org.service.productService.ProductsService;
+import org.service.productService.ProductsServiceImp;
+import org.util.SortedProduct;
 
 import java.io.FileInputStream;
 import java.io.IOException;

@@ -1,6 +1,7 @@
 package org.dao.tovarDao;
 
 
+import org.dao.ResultHandler;
 import org.model.Product;
 
 import java.sql.Connection;
@@ -58,7 +59,7 @@ public class ProductsDAOImp implements ProductsDAO {
     }
 
     @Override
-    public Map<String, List<String>> allNamesBillsOfLadingByDatta(String datatime) {
+    public Map<String, List<String>> getAllNamesBillsOfLadingByDatta(String datatime) {
         List<String> valuesBills = new ArrayList<>();
         Map<String, List<String>> allBills = new HashMap<>();
 

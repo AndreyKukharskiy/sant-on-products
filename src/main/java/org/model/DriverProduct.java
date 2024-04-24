@@ -1,16 +1,46 @@
 package org.model;
 
 public class DriverProduct {
-   private String position;
-   private String name;
-   private String article;
-   private String barcode;
-   private double count;
-   private String notFound;
-   private String order;
+    private int id;
+    private String position;
+    private String name;
+    private String article;
+    private String barcode;
+    private double count;
+    private String notFound;
+    private String order;
+
+    public DriverProduct(int id, String position, String name, String article, String barcode, double count, String notFound, String order) {
+        this.id = id;
+        this.position = position;
+        this.name = name;
+        this.article = article;
+        this.barcode = barcode;
+        this.count = count;
+        this.notFound = notFound;
+        this.order = order;
+    }
+
+    public DriverProduct(String position, String name, String article, String barcode, double count, String notFound, String order) {
+        this.position = position;
+        this.name = name;
+        this.article = article;
+        this.barcode = barcode;
+        this.count = count;
+        this.notFound = notFound;
+        this.order = order;
+    }
 
     public String getPosition() {
         return position;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setPosition(String position) {
@@ -65,26 +95,8 @@ public class DriverProduct {
         this.order = order;
     }
 
-    public DriverProduct(String position, String name, String article, String barcode, double count, String notFound, String order) {
-        this.position = position;
-        this.name = name;
-        this.article = article;
-        this.barcode = barcode;
-        this.count = count;
-        this.notFound = notFound;
-        this.order = order;
-    }
-
     @Override
     public String toString() {
-        return "DriverProduct{" +
-                "position=" + position +
-                ", |name='" + name +
-                ", |article='" + article +
-                ", |barcode=" + barcode +
-                ", |count=" + count +
-                ", |notFound='" + notFound +
-                ", |order=" + order +
-                '}';
+        return "DriverProduct{" + "position=" + position + ", |name='" + name + ", |article='" + article + ", |barcode=" + barcode + ", |count=" + count + ", |notFound='" + notFound + ", |order=" + order + '}';
     }
 }

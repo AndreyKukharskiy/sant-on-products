@@ -1,8 +1,8 @@
 package org.util;
 
 import org.model.Product;
-import org.service.ProductsService;
-import org.service.ProductsServiceImp;
+import org.service.productService.ProductsService;
+import org.service.productService.ProductsServiceImp;
 
 import java.sql.SQLException;
 import java.util.*;
